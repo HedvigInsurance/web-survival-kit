@@ -1,0 +1,29 @@
+{
+  "name": "@hedviginsurance/web-survival-kit",
+  "version": "0.1.0",
+  "description": "Keep Hedvig's tools to the trade alive",
+  "main": "index.js",
+  "repository": "https://github.com/HedvigInsurance/web-survival-kit",
+  "author": "Johan Palmfjord <johan.palmfjord@hedvig.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "babel-loader": "^8.0.2",
+    "es6-promise": "^4.2.5",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "ts-jest": "^23.10.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.19.1",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-stats-plugin": "^0.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3"
+  }
+}
