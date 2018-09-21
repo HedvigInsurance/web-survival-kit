@@ -16,3 +16,5 @@ script:
 - yarn typecheck
 - yarn build
 
+notifications:
+  email: false
