@@ -11,7 +11,7 @@ module.exports = ({
 }) =>
   webpackConfig({
     entry: {
-      app: ['@babel/polyfill', 'es6-promise', entryFile],
+      app: [`webpack-dev-server/client`, 'webpack/hot/dev-server', '@babel/polyfill', 'es6-promise', entryFile],
     },
     modules,
     target: 'web',
