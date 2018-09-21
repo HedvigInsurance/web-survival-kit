@@ -15,7 +15,8 @@
     "husky": "^0.14.3",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "tslint": "^5.11.0"
   },
   "dependencies": {
     "@hedviginsurance/brand": "^1.3.1",
@@ -32,6 +33,8 @@
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.10",
     "source-map-support": "^0.5.9",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.0",
     "typescript": "^3.0.3"
   },
   "husky": {

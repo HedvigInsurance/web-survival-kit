@@ -1,12 +1,15 @@
 {
   "name": "@hedviginsurance/web-survival-kit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Keep your tools to the trade alive",
   "main": "index.js",
   "repository": "https://github.com/HedvigInsurance/web-survival-kit",
   "author": "Johan Palmfjord <johan.palmfjord@hedvig.com>",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "./types.d.ts",
   "dependencies": {
     "@babel/core": "^7.1.0",

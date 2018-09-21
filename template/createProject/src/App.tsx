@@ -6,6 +6,4 @@ const AppComponent = styled('div')({
   color: 'red',
 })
 
-export const App: React.SFC = () => (
-  <AppComponent>Hello world!</AppComponent>
-)
+export const App: React.SFC = () => <AppComponent>Hello world!</AppComponent>

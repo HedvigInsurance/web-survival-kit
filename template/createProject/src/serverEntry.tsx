@@ -1,19 +1,19 @@
 import 'source-map-support/register'
-import * as React from 'react'
-import * as Koa from 'koa'
-import * as path from 'path'
-import { renderStylesToString } from 'emotion-server'
-import { renderToString } from 'react-dom/server'
 import {
   createKoaServer,
   getScriptLocation,
 } from '@hedviginsurance/web-survival-kit'
+import { renderStylesToString } from 'emotion-server'
+import * as Koa from 'koa'
+import * as path from 'path'
+import * as React from 'react'
+import { renderToString } from 'react-dom/server'
 
 import { App } from './App'
 
 const scriptLocation = getScriptLocation({
   statsLocation: path.resolve(__dirname, 'assets'),
-  webpackPublicPath: process.env.WEBPACK_PUBLIC_PATH,
+  webpackPublicPath: process.env.WEBPACK_PUBLIC_PATH || '',
 })
 const template = (body: string) => `
 <!doctype html>
@@ -38,7 +38,7 @@ const getPage: Koa.Middleware = async (ctx) => {
 }
 const getPort = () => (process.env.PORT ? Number(process.env.PORT) : 8080)
 
-console.log(`Booting server on ${getPort()} 👢`)
+console.log(`Booting server on ${getPort()} 👢`) // tslint:disable-line no-console
 
 const server = createKoaServer({
   publicPath: process.env.WEBPACK_PUBLIC_PATH || '',
@@ -48,5 +48,5 @@ const server = createKoaServer({
 server.router.get('/', getPage)
 
 server.app.listen(getPort(), () => {
-  console.log(`Server started 🚀 listening on port ${getPort()}`)
+  console.log(`Server started 🚀 listening on port ${getPort()}`) // tslint:disable-line no-console
 })
