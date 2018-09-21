@@ -16,7 +16,3 @@ script:
 - yarn typecheck
 - yarn build
 
-notifications:
-  email: false
-  webhooks: https://www.travisbuddy.com
-  on_success: never
