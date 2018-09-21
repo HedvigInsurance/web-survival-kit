@@ -1,7 +1,7 @@
 {
   "name": "@hedviginsurance/web-survival-kit",
   "version": "0.1.0",
-  "description": "Keep Hedvig's tools to the trade alive",
+  "description": "Keep your tools to the trade alive",
   "main": "index.js",
   "repository": "https://github.com/HedvigInsurance/web-survival-kit",
   "author": "Johan Palmfjord <johan.palmfjord@hedvig.com>",
