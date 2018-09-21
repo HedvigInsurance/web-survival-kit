@@ -3,9 +3,7 @@
     "start": "node build/index.js",
     "build": "hedvig project:build ./hedvig.config.js",
     "watch": "hedvig project:watch ./hedvig.config.js",
-    "test": "jest",
-    "format": "prettier \"src/*.{ts,tsx}\"",
-    "postinstall": "hedvig config:ensure ."
+    "test": "jest"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.14",
