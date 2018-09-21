@@ -4,8 +4,8 @@ const webpackConfig = require('./webpack.config.base')
 module.exports = ({
   entryFile,
   modules,
-  port = 8081,
-  publicPath = `http://0.0.0.0:${port}/`,
+  port,
+  publicPath,
   path,
   context,
 }) =>
@@ -32,6 +32,13 @@ module.exports = ({
       publicPath,
       path,
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('development'),
+        },
+      }),
+    ],
     context,
   })

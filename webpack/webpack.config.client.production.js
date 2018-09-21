@@ -2,23 +2,18 @@ const webpack = require('webpack')
 const { StatsWriterPlugin } = require('webpack-stats-plugin')
 const webpackConfig = require('./webpack.config.base')
 
-module.exports = ({ entryFile, path, modules, context, port = 8081, publicPath = `/assets/` }) =>
+module.exports = ({
+  entryFile,
+  path,
+  publicPath,
+  modules,
+  context,
+}) =>
   webpackConfig({
     entry: { app: ['@babel/polyfill', 'es6-promise', entryFile] },
     modules,
     target: 'web',
     mode: 'production',
-    devServer: {
-      compress: true,
-      hot: true,
-      inline: true,
-      host: '0.0.0.0',
-      disableHostCheck: true,
-      port,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-    },
     context,
     output: {
       filename: '[name]-[hash].js',
@@ -29,6 +24,11 @@ module.exports = ({ entryFile, path, modules, context, port = 8081, publicPath =
       new webpack.LoaderOptionsPlugin({
         minimize: true,
         debug: false,
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production'),
+        },
       }),
       new StatsWriterPlugin({ filename: 'stats.json' }),
     ],

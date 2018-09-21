@@ -1,7 +1,16 @@
 const webpack = require('webpack')
-const babelrc  = require('../.babelrc')
+const babelrc = require('../.babelrc')
 
-module.exports = ({ modules, mode, entry, target, plugins, output, context, ...rest }) => ({
+module.exports = ({
+  modules,
+  mode,
+  entry,
+  target,
+  plugins,
+  output,
+  context,
+  ...rest
+}) => ({
   mode,
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
