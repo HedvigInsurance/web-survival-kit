@@ -1,17 +1,16 @@
 const webpack = require('webpack')
 const webpackConfig = require('./webpack.config.base')
 
-module.exports = ({
-  entryFile,
-  modules,
-  port,
-  publicPath,
-  path,
-  context,
-}) =>
+module.exports = ({ entryFile, modules, port, publicPath, path, context }) =>
   webpackConfig({
     entry: {
-      app: ['@babel/polyfill', 'es6-promise', entryFile],
+      app: [
+        'webpack-dev-server/client',
+        'webpack/hot/dev-server',
+        '@babel/polyfill',
+        'es6-promise',
+        entryFile,
+      ],
     },
     modules,
     target: 'web',
