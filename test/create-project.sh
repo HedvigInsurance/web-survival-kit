@@ -14,10 +14,9 @@ cp "$BASE_DIR/../tslint.json" "$BASE_DIR/build/createProject";
 
 echo "Running scripts";
 cd "$BASE_DIR/build/createProject" \
-  && yarn \
-  && pwd \
-  && yarn lint \
-  && yarn typecheck \
-  && yarn test;
+  && (yarn || exit 1) \
+  && (yarn lint || exit 1) \
+  && (yarn typecheck || exit 1) \
+  && (yarn test || exit 1);
 
 rm -rf "$BASE_DIR/build/createProject";
