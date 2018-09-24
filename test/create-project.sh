@@ -13,10 +13,11 @@ cp "$BASE_DIR/../tsconfig.json" "$BASE_DIR/build/createProject";
 cp "$BASE_DIR/../tslint.json" "$BASE_DIR/build/createProject";
 
 echo "Running scripts";
-cd "$BASE_DIR/build/createProject" \
-  && (yarn || exit 1) \
-  && (yarn lint || exit 1) \
-  && (yarn typecheck || exit 1) \
-  && (yarn test || exit 1);
+(cd "$BASE_DIR/build/createProject" \
+  && yarn \
+  && yarn lint \
+  && yarn typecheck \
+  && yarn test) \
+  || exit 1;
 
 rm -rf "$BASE_DIR/build/createProject";
