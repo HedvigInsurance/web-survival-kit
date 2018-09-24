@@ -3,6 +3,9 @@ language: node_js
 node_js:
 - '10'
 
+install:
+- npm i -g yarn@1.9.1
+
 script:
 - ./test/create-project.sh
 
