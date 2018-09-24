@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpackConfig = require('./webpack.config.base')
 
 module.exports = ({ entryFile, path, publicPath, context, mode, modules }) =>
@@ -24,6 +25,7 @@ module.exports = ({ entryFile, path, publicPath, context, mode, modules }) =>
           WEBPACK_PUBLIC_PATH: JSON.stringify(publicPath),
         },
       }),
+      new CopyWebpackPlugin([{ from: 'assets/**/*', to: path }]),
     ],
     externals: nodeExternals(),
   })

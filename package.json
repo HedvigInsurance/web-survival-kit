@@ -21,6 +21,7 @@
     "@types/koa": "^2.0.46",
     "@types/koa-router": "^7.0.32",
     "babel-loader": "^8.0.2",
+    "copy-webpack-plugin": "^4.5.2",
     "es6-promise": "^4.2.5",
     "jest": "^23.6.0",
     "koa": "^2.5.3",
