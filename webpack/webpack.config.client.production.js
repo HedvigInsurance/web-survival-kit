@@ -2,13 +2,7 @@ const webpack = require('webpack')
 const { StatsWriterPlugin } = require('webpack-stats-plugin')
 const webpackConfig = require('./webpack.config.base')
 
-module.exports = ({
-  entryFile,
-  path,
-  publicPath,
-  modules,
-  context,
-}) =>
+module.exports = ({ entryFile, path, publicPath, modules, context }) =>
   webpackConfig({
     entry: { app: ['@babel/polyfill', 'es6-promise', entryFile] },
     modules,
