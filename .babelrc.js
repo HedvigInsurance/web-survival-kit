@@ -7,7 +7,10 @@ module.exports = {
   plugins: ['react-hot-loader/babel', '@babel/plugin-syntax-dynamic-import'],
   env: {
     test: {
-      plugins: ['@babel/transform-modules-commonjs'],
+      plugins: [
+        '@babel/transform-modules-commonjs',
+        'babel-plugin-dynamic-import-node',
+      ],
     },
   },
 }
