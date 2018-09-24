@@ -12,9 +12,7 @@ const getScriptLocation = ({ statsLocation, webpackPublicPath }) =>
 const createKoaServer = ({ publicPath, assetLocation }) => {
   const app = new Koa()
   const router = new Router()
-  if (process.env.NODE_ENV === 'production' && assetLocation && publicPath) {
-    app.use(mount(publicPath, serve(assetLocation)))
-  }
+  app.use(mount(publicPath, serve(assetLocation)))
   app.use(router.middleware())
 
   return { app, router }
