@@ -1,5 +1,6 @@
 node_modules
 yarn-error.log
 
-/template/yarn.lock
+/template/createProject/yarn.lock
+/test/build/*
 
