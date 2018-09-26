@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const path = require('path')
 const babelrc = require('../.babelrc')
 
 module.exports = ({
@@ -14,7 +15,7 @@ module.exports = ({
   mode,
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
-    modules,
+    modules: [path.resolve(context, 'node_modules'), path.resolve('src')],
   },
   entry,
   module: {
