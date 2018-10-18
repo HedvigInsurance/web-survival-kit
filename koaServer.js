@@ -15,7 +15,7 @@ const getScriptLocation = ({ statsLocation, webpackPublicPath }) =>
 const createKoaServer = ({ publicPath, assetLocation }) => {
   const app = new Koa()
   const router = new Router()
-  app.use(compress())
+  app.use(compress({ threshold: '5kb' }))
   app.use(mount(publicPath, serve(assetLocation, { maxage: 86400 * 365 })))
   app.use(router.middleware())
 
