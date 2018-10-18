@@ -44,7 +44,6 @@ console.log(`Booting server on ${getPort()} 👢`) // tslint:disable-line no-con
 const server = createKoaServer({
   publicPath: '/assets',
   assetLocation: __dirname + '/assets',
-  maxAge: 86400 * 365 * 1000,
 })
 
 server.router.get('/', getPage)
