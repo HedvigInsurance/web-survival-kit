@@ -14,6 +14,11 @@ import { StaticRouter, StaticRouterContext } from 'react-router'
 import { FilledContext, HelmetProvider } from 'react-helmet-async'
 import { App } from '../App'
 import { routes } from '../routes'
+import { appLogger } from './logging'
+import { IHelmetConfiguration } from 'helmet'
+import { helmetConfig } from './config/helmetConfig'
+import { Logger } from 'typescript-logging'
+import * as bodyParser from 'koa-bodyparser'
 
 const scriptLocation = getScriptLocation({
   statsLocation: path.resolve(__dirname, 'assets'),
@@ -63,7 +68,7 @@ const getPage: Koa.Middleware = async (ctx) => {
 
   ctx.body = template(reactBody, (helmetContext as FilledContext).helmet)
 }
-const getPort = () => (process.env.PORT ? Number(process.env.PORT) : 8030)
+const getPort = () => (process.env.PORT ? Number(process.env.PORT) : 8080)
 
 console.log(`Booting server on ${getPort()} 👢`) // tslint:disable-line no-console
 
@@ -95,6 +100,13 @@ const server = createKoaServer({
   helmetConfig: helmetConfigToUse,
   authConfig,
 })
+
+server.router.use(
+  bodyParser({
+    extendTypes: { json: ['application/csp-report'] },
+  }),
+)
+
 server.router.get('/panic-room', async () => {
   throw new Error(
     'Entered the panic room, this is an expected error. Carry on 👜',
