@@ -1,8 +1,9 @@
 const webpack = require('webpack')
 const { StatsWriterPlugin } = require('webpack-stats-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const webpackConfig = require('./webpack.config.base')
 
-module.exports = ({ entryFile, path, publicPath, modules, context }) =>
+module.exports = ({ entryFile, path, publicPath, modules, context, analyze }) =>
   webpackConfig({
     entry: { app: ['@babel/polyfill', 'es6-promise', entryFile] },
     modules,
@@ -25,5 +26,6 @@ module.exports = ({ entryFile, path, publicPath, modules, context }) =>
         },
       }),
       new StatsWriterPlugin({ filename: 'stats.json' }),
-    ],
+      analyze && new BundleAnalyzerPlugin(),
+    ].filter(Boolean),
   })

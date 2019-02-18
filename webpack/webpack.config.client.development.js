@@ -5,10 +5,9 @@ module.exports = ({ entryFile, modules, port, publicPath, path, context }) =>
   webpackConfig({
     entry: {
       app: [
+        '@babel/polyfill',
         'webpack-dev-server/client',
         'webpack/hot/dev-server',
-        '@babel/polyfill',
-        'es6-promise',
         entryFile,
       ],
     },
