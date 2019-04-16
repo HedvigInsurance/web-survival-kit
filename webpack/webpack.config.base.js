@@ -1,6 +1,9 @@
 const webpack = require('webpack')
+const threadLoader = require('thread-loader')
 const path = require('path')
 const babelrc = require('../.babelrc')
+
+threadLoader.warmup({}, ['babel-loader'])
 
 module.exports = ({
   modules,
@@ -22,12 +25,17 @@ module.exports = ({
     rules: [
       {
         test: /\.(tsx?|js)$/,
-        loader: 'babel-loader',
-        options: babelrc,
+        loaders: [
+          'thread-loader',
+          {
+            loader: 'babel-loader',
+            options: { ...babelrc, cacheDirectory: true },
+          },
+        ],
       },
     ],
   },
-  devtool: 'source-map',
+  devtool: 'cheap-source-map',
   target,
   context,
   stats: {

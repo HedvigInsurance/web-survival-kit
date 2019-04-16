@@ -34,11 +34,12 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "nodemon": "^1.18.4",
+    "thread-loader": "^2.1.2",
     "ts-jest": "^23.10.0",
     "typescript": "^3.0.3",
     "typescript-logging": "^0.6.3",
     "uuid": "^3.3.2",
-    "webpack": "^4.19.1",
+    "webpack": "^4.30.0",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-node-externals": "^1.7.2",
     "webpack-stats-plugin": "^0.2.1"
