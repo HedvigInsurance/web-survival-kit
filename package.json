@@ -1,6 +1,6 @@
 {
   "name": "@hedviginsurance/web-survival-kit",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Keep your tools to the trade alive",
   "main": "index.js",
   "repository": "https://github.com/HedvigInsurance/web-survival-kit",
@@ -39,7 +39,7 @@
     "typescript": "^3.0.3",
     "typescript-logging": "^0.6.3",
     "uuid": "^3.3.2",
-    "webpack": "^4.30.0",
+    "webpack": "4.19.1",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-node-externals": "^1.7.2",
     "webpack-stats-plugin": "^0.2.1"
