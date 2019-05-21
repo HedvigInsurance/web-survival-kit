@@ -25,7 +25,7 @@ module.exports = ({
     rules: [
       {
         test: /\.(tsx?|js)$/,
-        loaders: [
+        use: [
           'thread-loader',
           {
             loader: 'babel-loader',
