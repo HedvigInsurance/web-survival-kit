@@ -27,7 +27,7 @@
     "es6-promise": "^4.2.5",
     "jest": "^23.6.0",
     "koa": "^2.5.3",
-    "koa-basic-auth": "^3.0.0",
+    "koa-basic-auth": "^4.0.0",
     "koa-compress": "^3.0.0",
     "koa-helmet": "^4.0.0",
     "koa-mount": "^4.0.0",
