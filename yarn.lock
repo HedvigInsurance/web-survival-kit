@@ -3210,7 +3210,7 @@ helmet-csp@2.7.1:
     dasherize "2.0.0"
     platform "1.3.5"
 
-helmet@^3.15.1:
+helmet@^3.18.0:
   version "3.18.0"
   resolved "https://registry.yarnpkg.com/helmet/-/helmet-3.18.0.tgz#37666f7c861bd1ff3015e0cdb903a43501e3da3e"
   integrity sha512-TsKlGE5UVkV0NiQ4PllV9EVfZklPjyzcMEMjWlyI/8S6epqgRT+4s4GHVgc25x0TixsKvp3L7c91HQQt5l0+QA==
@@ -4316,11 +4316,11 @@ koa-convert@^1.2.0:
     koa-compose "^3.0.0"
 
 koa-helmet@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/koa-helmet/-/koa-helmet-4.1.0.tgz#eb1f052fb72a14747d5f215d8707827fdea296f1"
-  integrity sha512-a/aVORiFf9LAa19iRLBixzYGd3EpHIA/Awnxg4suKuHlm2sdQJNH2MAvwNktF6W4RHtPCIOqH6rx91++QYpUVw==
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/koa-helmet/-/koa-helmet-4.2.0.tgz#379ec37069c64c9785b279224f7a41fc434e6596"
+  integrity sha512-eZ/Z9UZ9vY5ubM3O1KcWZwEeqtz+Xzp0F8wkzrKoO5QHsAZ3qkKlS3K45HF/WAjYUMgkQTy7J1s/rVWTlVrt3Q==
   dependencies:
-    helmet "^3.15.1"
+    helmet "^3.18.0"
 
 koa-is-json@^1.0.0:
   version "1.0.0"
